@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after{
+ margin:0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+/*Custom Properties*/
+
+:root{
+    --clr-primary-900:hsl(240, 38%, 20%);
+    --clr-primary-300:hsl(240, 18%, 77%);
+    --ff-primary: 'Inter', sans-serif;
+   
+    --fw-light:300;
+    --fw-medium:medium;
+    --fw-bold:bold;
+    
+    --fs-body_mobile: 1.14rem;
+    --fs-name_mobile: 1rem;
+    --fs-job_mobile: .9rem;
+    --fs-body_destop: 2rem;
+    --br: 7px;
+}
+
+/* mobile Section */
+body{
+    font-family: var(--ff-primary);
+    position: relative;
+    background-image: url(../images/pattern-curve.svg);
+    background-position: left bottom;
+    background-size: 280px 70px;
+    background-repeat: no-repeat;
+}
+
+.arrow{
+    position: absolute;
+    top:270px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: flex;
+    
+}
+
+.ar-prev{
+background-color: white;
+padding: 13px 13px;
+border-radius: 50% 0 0 50%;
+width: 35px;
+height: 38px;
+}
+
+.ar-next{
+    background-color: white;
+    padding: 13px 13px;
+    border-radius: 0 50% 50% 0 ;
+    width: 35px;
+    height: 38px;  
+    }
+
+.testimonial-container{
+max-width: 100%;
+margin-right: auto;
+margin-left: auto;
+margin-top: 25px;
+background-image: url(../images/pattern-bg.svg),url(../images/pattern-quotes.svg);
+background-repeat: no-repeat;
+background-position: top center, center bottom 240px;
+background-size: 330px 315px,60px 50px;
+}
+
+.fade{
+    padding-top: 30px;
+    
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 260px;
+    border-radius: var(--br);
+    position:relative;
+    animation-name: ocsilating-img;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    box-shadow: 1px 9px 27px -4px  hsl(240, 18%, 77%);
+}
+
+@keyframes ocsilating-img {
+    0%   {transform: rotate(-2deg)}
+    25%  {transform: rotate(2deg)}
+    50%  {transform: rotate(-2deg)}
+    75%  {transform: rotate(2deg)}
+    100% {transform: rotate(-2deg)}
+  }
+
+.content{
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: var(--clr-primary-900);
+    font-size: var(--fs-body_mobile);
+    font-weight: var(--fw-medium);
+    max-width: 320px;
+   
+}
+
+.name{
+    font-size: var(--fs-name_mobile);
+    padding-top: 20px;
+    font-weight: var(--fw-bold);
+    text-align: center;
+}
+
+.job-title{
+    font-size: var(--fs-job_mobile);
+    font-weight: var(--fw-medium);
+    color: var(--clr-primary-300);
+    padding-bottom: 60px;
+    text-align: center;
+}
+/*desktop version */
+@media (min-width : 1440px){
+
+body{
+    height: auto;
+    background-position: left bottom;
+    background-size: 950px 350px;
+}
+
+.arrow{
+    top: 660px;
+    left: 60%;
+}
+
+.ar-prev{
+    background-color: white;
+    padding: 20px 20px;
+    width: 55px;
+    height: 58px;
+    }
+    
+    .ar-next{
+        background-color: white;
+        padding: 20px 20px;
+        width: 55px;
+        height: 58px;  
+        }
+
+.testimonial-container{
+    position: relative;
+    max-width: 1440px;
+    background-position: right 80px top 100px, left 270px top 270px;
+    background-size: 680px 640px,120px 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.fade{
+   max-width: 1105px; 
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0;
+}
+.img-container{
+    position: relative;
+    -webkit-transform: translateY(31%);
+    transform: translateY(31%);
+    margin-left: auto;
+    max-width: fit-content;
+}
+
+.img{
+    width: 525px;
+    margin-right: 0;
+}
+.content-container{
+    position: relative;
+    margin-right: auto;
+    transform: translateY(-85%);
+    bottom: 70%;
+    max-width: fit-content;
+    padding-top: 160px;
+}
+.content{
+    text-align: left;
+    font-size: var(--fs-body_destop);
+    max-width: 650px;
+    margin-left: 0;
+}
+.name-container{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+.name{
+    padding: 0;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.job-title{
+    padding: 0;
+    font-size: 1.2rem;
+}
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
